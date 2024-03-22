@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Gothic&family=League+Spartan:wght@100..900&display=swap');
+*{
+    margin: 0;
+}
+
+body {
+    background-color: #1A1A1D;
+    margin: 0;
+}
+
+.container1{
+    max-width: 1440px;
+    height: 820px;
+
+    display: flex;
+    justify-content: center;
+
+    margin: auto;
+
+    /* background-color: antiquewhite; */
+
+    position: relative;
+}
+
+.image{
+    position: absolute;
+    width: 743px;
+    right: 100px;
+    bottom: 0px;
+    z-index: -1;
+}
+
+nav {
+    position: absolute;
+
+    font-family: "Roboto";
+    margin: auto;
+    padding-top: 50px;
+    max-width: 1200px;
+    min-width: 500px;
+
+    z-index: 2;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform:uppercase;
+
+    /* background-color: #2e2e34; */
+}
+
+nav .links{
+    display: flex;
+    gap: 30px;
+}nav .links a{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: white;
+
+    transition: 0.3s ease;
+}nav .links a:hover{
+    color: #C3073F;
+}
+
+.content{
+    height: 100%;
+    width: 78%;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+}
+.content h1{
+    font-family: "League Gothic";
+    font-weight: 400;
+    font-size: 96px;
+    color: #C3073F;
+}.content h3{
+    font-family: "League Spartan";
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 10px;
+    margin-top: 10px;
+    color: #ffffff;
+}
+
+.media{
+    position: absolute;
+    right: 70px;
+    bottom: 60px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}.media .line{
+    background-color: #C3073F;
+    height: 90px;
+    width: 5px;
+}.media i{
+    font-size: 34px;
+    color: #ffffff;
+    cursor: pointer;
+    transition:  transform 0.3s ease;
+}.media i:hover{
+    font-size: 34px;
+    color: #C3073F;
+    transform: scale(1.2);
+}
+
+
