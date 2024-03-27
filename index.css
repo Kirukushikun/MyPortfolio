@@ -190,6 +190,7 @@ nav .links{
     max-width: 1440px;
     height: 720px;    
     margin: auto;
+    margin-bottom: 70px;
 
     display: flex;
     flex-direction: column;
@@ -265,6 +266,7 @@ nav .links{
 }.container4 .portfolio{
     color: white;
     max-width: 1440px;
+    margin-bottom: 20px;
 }
 
 .portfolio h1{
@@ -273,7 +275,7 @@ nav .links{
     font-size: 64px;
     font-weight: bold;
     letter-spacing: 8px;
-    margin-bottom: 60px;
+    margin-bottom: 70px;
 }.portfolio .projects{
     display: grid;
     grid-template-columns: "1fr 1fr";
