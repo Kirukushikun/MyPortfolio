@@ -189,7 +189,7 @@ nav .links{
     max-width: 1440px;
     height: 720px;    
     margin: auto;
-    margin-bottom: 70px;
+    padding-bottom: 70px;
 
     display: flex;
     flex-direction: column;
