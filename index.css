@@ -119,9 +119,8 @@ nav .links{
     font-size: 34px;
     color: #ffffff;
     cursor: pointer;
-    transition:  transform 0.3s ease;
+    transition: 0.3s ease;
 }.media i:hover{
-    font-size: 34px;
     color: #C3073F;
     transform: scale(1.2);
 }
@@ -405,15 +404,6 @@ nav .links{
     justify-content: center;
 
     position: relative;
-}.container5 h1{
-    font-family: "League Spartan";
-    font-size: 64px;
-    font-weight: bold;
-    letter-spacing: 8px;
-    color: white;
-
-    position: absolute;
-    top: -28px;
 }
 
 .container5 .contacts{
@@ -464,8 +454,7 @@ nav .links{
 .container5 .links{
     display: flex;
     gap: 35px;
-    position: absolute;
-    bottom: -15px;
+    padding: 0 40px;
     z-index: 1;
 }
 .container5 .links i{
@@ -476,19 +465,30 @@ nav .links{
 }
 .container5 .links i:hover{
     transform: scale(1.2);
+    color: #C3073F;
 }
 
 .container5 .head{
+    top: -28px;
+    position: absolute;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: absolute;
-    width: 100%;
-    top: 0;
+}.container5 .head h1{
+    font-family: "League Spartan";
+    font-size: 64px;
+    font-weight: bold;
+    letter-spacing: 8px;
+    color: white;
+    
+    padding: 0 40px;
+    margin-left: 15px;
+    width: 70%;
 }.container5 .head .line{
     height: 4px;
-    width: 37%;
     background-color: #C3073F;
+    width: 100%;
 }
 
 .container5 .foot{
@@ -496,14 +496,12 @@ nav .links{
     align-items: center;
     justify-content: space-between;
     position: absolute;
+    bottom: -15px;
     width: 100%;
-    bottom: 0;
-}
-
-.container5 .foot .line{
+}.container5 .foot .line{
     height: 4px;
-    width: 41%;
     background-color: #C3073F;
+    width: 100%;
 }
 /* CONTAINER 5 */
 
@@ -526,3 +524,10 @@ nav .links{
 }
 
 /* CONTAINER 6 */
+
+/* .bxl-facebook-circle:hover{
+    color: transparent;
+    background: rgb(0,98,225);
+    background: linear-gradient(0deg, rgba(0,98,225,1) 0%, rgba(2,128,237,1) 33%, rgba(9,155,246,1) 72%, rgba(18,176,255,1) 100%);
+    -webkit-background-clip: text;
+} */
