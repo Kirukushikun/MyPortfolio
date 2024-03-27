@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=League+Gothic&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=League+Gothic&family=League+Spartan:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manjari:wght@100;400;700&display=swap');
+
 *{
     margin: 0;
 }
@@ -78,6 +80,13 @@ nav .links{
     display: flex;
     align-items: center;
 }
+
+.content .details{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .content .details h1{
     font-family: "League Gothic";
     font-weight: 400;
@@ -89,7 +98,6 @@ nav .links{
     font-size: 24px;
     font-weight: 400;
     letter-spacing: 10px;
-    margin-top: -30px;
     color: #ffffff;
 }
 
@@ -142,7 +150,7 @@ nav .links{
     margin-bottom: 30px;
 }
 
-.details{
+.about .details{
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -267,8 +275,20 @@ nav .links{
     letter-spacing: 8px;
     margin-bottom: 60px;
 }.portfolio .projects{
-    display: flex;
+    display: grid;
+    grid-template-columns: "1fr 1fr";
+    grid-template-areas:
+    "Web1 Web2"
+    "Title1 Title2";
     gap: 60px;
+}.portfolio .projects h4{
+    font-size: 24px;
+    font-family: "League Spartan";
+    font-weight: 400;
+    letter-spacing: 8px;
+
+    margin-top: -25px;
+    padding: 0 20px;
 }
 
 .projects .website{
@@ -300,6 +320,8 @@ nav .links{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 22px;
+
     font-family: "Roboto";
     width: 75%;
     z-index: 1;
@@ -316,8 +338,6 @@ nav .links{
     font-weight: 300;
     font-family: "Roboto";
     letter-spacing: 4px;  
-    margin-top: -20px; 
-    margin-bottom: -20px;
 }.website .details button{
     width: 115px;
     height: 30px;
@@ -357,6 +377,14 @@ nav .links{
     transform: scale(105%);
 }
 
+.website h4{
+    background-color: #72B5C5;
+    position: absolute;
+    z-index: 1;
+    bottom: -10px;
+    left: 0;
+}
+
 .philspot:hover .details{
     opacity: 1;
 }.studysphere:hover .details{
@@ -364,3 +392,136 @@ nav .links{
 }
 
 /* CONTAINER 4 */
+
+/* CONTAINER 5 */
+.container5{
+    height: 320px;
+    background-color: #1A1A1D;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}.container5 h1{
+    font-family: "League Spartan";
+    font-size: 64px;
+    font-weight: bold;
+    letter-spacing: 8px;
+    color: white;
+
+    position: absolute;
+    top: -28px;
+}
+
+.container5 .contacts{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.contacts .details{
+    display: flex;
+    gap: 30px;
+}
+
+.contacts .containers{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+
+    font-family: "Manjari";
+    font-size: 20px;
+    letter-spacing: 2px;
+
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 5px;
+    border-color: #6F2232;
+
+    padding: 10px;
+
+    gap: 10px;
+
+    width: 330px;
+}.contacts .containers i{
+    font-size: 28px;
+    color: #C3073F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}.contacts .containers p{
+    margin-top: 3px;
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+.container5 .links{
+    display: flex;
+    gap: 35px;
+    position: absolute;
+    bottom: -15px;
+    z-index: 1;
+}
+.container5 .links i{
+    font-size: 34px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.container5 .links i:hover{
+    transform: scale(1.2);
+}
+
+.container5 .head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    width: 100%;
+    top: 0;
+}.container5 .head .line{
+    height: 4px;
+    width: 37%;
+    background-color: #C3073F;
+}
+
+.container5 .foot{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+.container5 .foot .line{
+    height: 4px;
+    width: 41%;
+    background-color: #C3073F;
+}
+/* CONTAINER 5 */
+
+/* CONTAINER 6 */
+.container6{
+    background-color: #161617;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    font-family: "League Spartan";
+    font-size: 24px;
+    letter-spacing: 10px;
+    font-weight: 300;
+
+    margin: 0;
+    padding: 0;
+}
+
+/* CONTAINER 6 */
