@@ -75,6 +75,11 @@ nav .links{
     color: #C3073F;
 }
 
+.burger{
+    display: none;
+    width: 50px;
+}
+
 .content{
     height: 100%;
     width: 78%;
@@ -168,7 +173,7 @@ nav .links{
     background-color: #C3073F;
     position: absolute;
     left: 0;
-    top: 17px;
+    top: 16px;
 }.details .paragraph p{
     font-family: "Roboto";
     font-weight: 300;
@@ -217,7 +222,7 @@ nav .links{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-areas: "box1 box2 box3 box4";
-    gap: 60px;
+    gap: 55px;
 }
 .skillBoxes2{
     display: grid;
@@ -550,3 +555,183 @@ nav .links{
     background: linear-gradient(0deg, rgba(0,98,225,1) 0%, rgba(2,128,237,1) 33%, rgba(9,155,246,1) 72%, rgba(18,176,255,1) 100%);
     -webkit-background-clip: text;
 } */
+
+@media(max-width: 1300px){
+
+    .image{
+        visibility: hidden;
+    }
+    nav {
+        width: 90%;
+    }
+    .content{
+        width: auto;
+        position: absolute;
+    }
+    .content .details h1{
+        text-align: center;
+    }.content .details h3{
+        text-align: center;
+    }
+    /* -------------------- */
+
+}
+
+@media(max-width: 1200px){
+    nav .links{
+        display: none;
+    }
+    nav .burger{
+        display: block;
+    }
+    /* -------------------- */
+    .container2{
+        height: auto;    
+    }
+    .about{
+        padding: 80px 70px;
+    }
+    /* -------------------- */
+    .container3{
+        height: auto;    
+    }
+    .skills h1{
+        margin-top: 80px;
+    }
+    .skills .skillBoxes1{
+        margin-bottom: 50px;
+    }
+}
+
+@media(max-width: 1060px){
+    .skillBoxes1{
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: "box1 box2 box3";
+        gap: 55px;
+    }
+}
+
+@media(max-width: 900px){
+    .media{
+        right: auto;
+        flex-direction: row;
+    }
+    .media .line{
+        display: none;
+    }
+    /* -------------------- */
+    .about h1{
+        text-align: center;
+        font-size: 55px;
+    }
+    .details .paragraph p{
+        font-size: 23px;
+    }
+}
+
+@media(max-width: 700px){
+    .content{
+        width: 88%;
+    }
+    .content .details{
+        gap: 25px;
+    }.content .details h1{
+        line-height: 85px;   
+    }.content .details h3{
+        line-height: 30px;
+    }
+    /* -------------------- */
+    .about{
+        padding: 80px 50px;
+    }
+}
+
+@media(max-width: 750px){
+    .skillBoxes1{
+        grid-template-columns: 2fr 2fr;
+        grid-template-areas: "box1 box2";
+        gap: 35px;
+    }
+    .box{
+        width: auto;
+        height: auto;
+        padding: 20px;
+        border-radius: 7px;
+        border-width: 4px;
+    
+        flex-direction: row;
+        justify-content: start;
+        gap: 20px;
+    
+        font-size: 20px;
+        letter-spacing: 3px;
+    }.box img{
+        width: 20%;
+    }
+}
+
+@media(max-width: 560px){
+    nav {
+        min-width: auto;
+        width: 85%;
+    }
+    nav .logo{
+        width: 50px;
+    }
+    nav .burger{
+        width: 40px;
+    }
+    .content .details{
+        gap: 15px;
+    }.content .details h1{
+        font-size: 76px; 
+        line-height: 75px;   
+    }.content .details h3{
+        font-size: 19px;
+        line-height: 25px;
+    }
+    /* -------------------- */
+    .about h1{
+        text-align: center;
+        font-size: 50px;
+    }
+    .details .paragraph p{
+        font-size: 18px;
+        width: 90%;
+        line-height: 27px;
+    }
+    .details .paragraph .line{
+        top: 11px;
+    }
+    
+    .skillBoxes1{
+        grid-template-columns: 2fr 2fr;
+        grid-template-areas: "box1 box2";
+        gap: 35px;
+    }
+    .box{
+        width: auto;
+        height: auto;
+        padding: 20px;
+        border-radius: 7px;
+        border-width: 3px;
+    
+        flex-direction: row;
+        justify-content: start;
+        gap: 20px;
+    
+        font-size: 95%;
+        letter-spacing: 3px;
+    }.box img{
+        width: 10%;
+    }
+
+}
+
+@media(max-width: 425px){
+    .skillBoxes1{
+        grid-template-columns: 2fr;
+        grid-template-areas: "box1";
+        gap: 25px;
+    }
+}
