@@ -285,7 +285,7 @@ nav .links{
     margin-bottom: 70px;
 }.portfolio .projects{
     display: grid;
-    grid-template-columns: "1fr 1fr";
+    grid-template-columns: 1fr 1fr;
     grid-template-areas:
     "Web1 Web2"
     "Title1 Title2";
@@ -491,8 +491,9 @@ nav .links{
     letter-spacing: 8px;
     color: white;
     
-    padding: 0 40px;
-    width: 70%;
+    width: auto;
+    padding: 0 50px;
+    white-space: nowrap;
     text-align: center;
 }.container5 .head .line{
     height: 4px;
@@ -510,7 +511,7 @@ nav .links{
 }.container5 .foot .line{
     height: 4px;
     background-color: #C3073F;
-    width: 100%;
+    width: 95%;
 }
 /* CONTAINER 5 */
 
@@ -531,6 +532,10 @@ nav .links{
     margin: 0;
     padding: 0;
     padding-left: 10px;
+}
+.container6 p{
+    text-align: center;
+    line-height: 30px;
 }
 
 /* CONTAINER 6 */
@@ -556,6 +561,12 @@ nav .links{
     -webkit-background-clip: text;
 } */
 
+/* @media(max-width: 1441px){
+    .container5 .head{
+        top: -57px;
+    }
+} */
+
 @media(max-width: 1300px){
 
     .image{
@@ -574,7 +585,6 @@ nav .links{
         text-align: center;
     }
     /* -------------------- */
-
 }
 
 @media(max-width: 1200px){
@@ -601,6 +611,36 @@ nav .links{
     .skills .skillBoxes1{
         margin-bottom: 50px;
     }
+    /* -------------------- */
+    .container4{
+        height: auto;
+    }
+
+    .portfolio{
+        padding: 75px 0px;
+    }
+
+    .portfolio .projects{
+        grid-template-columns: 2fr;
+        grid-template-areas:
+        "Web1"
+        "Title1"
+        "Web2"
+        "Title2";
+        gap: 60px;
+    }
+    .philspot{
+        grid-area: Web1;
+    }
+    .projects .title1{
+        grid-area: Title1;
+    }
+    .studysphere{
+        grid-area: Web2;
+    }
+    .projects .title2{
+        grid-area: Title2;
+    }
 }
 
 @media(max-width: 1060px){
@@ -620,13 +660,40 @@ nav .links{
         display: none;
     }
     /* -------------------- */
-    .about h1{
+    .about h1, .skills h1, .portfolio h1, .container5 .head h1{
         text-align: center;
         font-size: 55px;
     }
     .details .paragraph p{
         font-size: 23px;
     }
+    /* -------------------- */
+    .container5 .head{
+        top: -25px;
+    }
+}
+
+@media(max-width: 845px){
+    .container5{
+        height: auto;
+        padding: 70px 18%;
+    }
+    .contacts{
+        width: 100%;
+    }
+    .contacts .details{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        width: 100%;
+        align-items: center;
+    }
+    .contacts .containers{
+        padding: 10px;
+        gap: 10px;
+        width: 100%;
+    }
+    
 }
 
 @media(max-width: 700px){
@@ -644,6 +711,15 @@ nav .links{
     .about{
         padding: 80px 50px;
     }
+    /* -------------------- */
+    .projects{
+        padding: 0 70px;
+    }
+    .projects .website{
+        width: auto;
+        height: 307px;
+    }
+    /* -------------------- */
 }
 
 @media(max-width: 750px){
@@ -668,6 +744,7 @@ nav .links{
     }.box img{
         width: 20%;
     }
+    /* -------------------- */
 }
 
 @media(max-width: 560px){
@@ -691,7 +768,7 @@ nav .links{
         line-height: 25px;
     }
     /* -------------------- */
-    .about h1{
+    .about h1, .skills h1, .portfolio h1, .container5 .head h1{
         text-align: center;
         font-size: 50px;
     }
@@ -725,7 +802,38 @@ nav .links{
     }.box img{
         width: 10%;
     }
-
+    /* -------------------- */
+    .projects .website{
+        width: auto;
+        height: 400px;
+    }
+    .projects .title1{
+        text-align: center;
+    }
+    .projects .title2{
+        text-align: center;
+    }
+    /* -------------------- */
+    .container5{
+        padding: 70px 70px; ;
+    }
+    .container5 .head h1{
+        font-size: 45px;
+    }
+    .contacts{
+        width: 100%;
+    }
+    .contacts .details{
+        width: 100%;
+        align-items: center;
+    }
+    .contacts .containers{
+        padding: 10px;
+        gap: 10px;
+        width: 100%;
+    }.contacts .containers p{
+        font-size: 15px;
+    }
 }
 
 @media(max-width: 425px){
@@ -733,5 +841,19 @@ nav .links{
         grid-template-columns: 2fr;
         grid-template-areas: "box1";
         gap: 25px;
+    }
+    /* -------------------- */
+    .container5 .head h1{
+        white-space:unset;
+    }
+    .container5 .head{
+        top: -40px;
+    }
+    .contacts .containers p{
+        font-size: 70%;
+    }
+    /* -------------------- */
+    .container6 p{
+        text-align: center;
     }
 }
