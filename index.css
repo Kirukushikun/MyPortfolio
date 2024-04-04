@@ -48,7 +48,7 @@ nav {
     max-width: 1200px;
     min-width: 500px;
 
-    z-index: 2;
+    z-index: 1;
 
     width: 100%;
 
@@ -76,8 +76,12 @@ nav .links{
 }
 
 .burger{
+    cursor: pointer;
     display: none;
     width: 50px;
+    transition: 0.3s ease;
+}.burger:hover{ 
+    transform: scale(1.1);
 }
 
 .content{
@@ -539,6 +543,69 @@ nav .links{
 }
 
 /* CONTAINER 6 */
+
+/* BROKEN NAVBAR */
+
+.broken{
+    background-color: #161617;
+    position: fixed;
+    right: -320px;
+    height: 100vh;
+    opacity: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px 25px;
+    width: 250px;
+    padding: 60px 30px;
+
+    transition: 0.3s ease;
+    z-index: 2;
+}
+.broken.active{
+    right: 0;
+    opacity: 1;
+}
+
+.broken .head{
+    color: white;    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}.broken .head img{
+    width: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}.broken .head img:hover{
+    transform: scale(1.1);
+}
+.broken .head p{
+    font-family: "League Gothic";
+    font-size: 33px;
+    letter-spacing: 2px;
+    color: #C3073F;
+}
+
+.broken .links{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+}.broken .links a{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: "Roboto";
+    letter-spacing: 1px;
+    color: white;
+
+    transition: 0.3s ease;
+}.broken .links a:hover{
+    color: #C3073F;
+}
+/* BROKEN NAVBAR */
 
 /* CUSTOM SCROLLBAR */
 ::-webkit-scrollbar{
