@@ -529,7 +529,7 @@ nav .links{
 
     color: white;
     font-family: "League Spartan";
-    font-size: 20px;
+    font-size: 24px;
     letter-spacing: 10px;
     font-weight: 300;
 
@@ -539,13 +539,13 @@ nav .links{
 }
 .container6 p{
     text-align: center;
+    width: 800px;
     line-height: 30px;
 }
 
 /* CONTAINER 6 */
 
 /* BROKEN NAVBAR */
-
 .broken{
     background-color: #161617;
     position: fixed;
