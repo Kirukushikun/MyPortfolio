@@ -9,6 +9,7 @@ html{
 
 *{
     margin: 0;
+    transition: 0.3s ease;
 }
 
 body {
@@ -272,67 +273,147 @@ nav .links{
     background-color: #161617;
 
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-}.container4 .portfolio{
-    color: white;
-    max-width: 1440px;
-    margin-bottom: 20px;
-}
 
-.portfolio h1{
+    gap: 70px;
+
+    padding: 20px 0;
+}
+.container4 h1{
+    color: white;
     text-align: center;
     font-family: "League Spartan";
     font-size: 64px;
     font-weight: bold;
     letter-spacing: 8px;
-    margin-bottom: 70px;
-}.portfolio .projects{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-    "Web1 Web2"
-    "Title1 Title2";
+
+    /* margin-top: 20px; */
+}
+.container4 .portfolio{
+    color: white;
+    max-width: 1440px;
+    margin-bottom: 20px;
+}
+
+.carousel {
+    position: relative;
+    max-width: 1440px;
+
+    /* height: 300px; */
+    margin: auto;
+    overflow: hidden;
+
+    /* background-color: beige; */
+
+    padding: 0 70px;
+}
+.carousel .carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.carousel .carousel-item {
+    min-width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 60px;
-}.portfolio .projects h4{
+}
+.carousel .prev, .next {
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    /* background: rgba(0, 0, 0, 0.5); */
+    background-color: transparent;
+    border: none;
+    border-radius: 3px;
+    padding: 10px;
+    cursor: pointer;
+}
+.carousel .prev { left: 90px; }
+.carousel .next { right: 90px; }
+
+.carousel button i{
+    font-size: 30px;
+    color: grey;
+}
+.carousel button:hover i{
+    transform: scale(1.1);
+    color: white;
+    
+}
+
+.portfolio .indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.indicators .indicator {
+    width: 10px;
+    height: 10px;
+    background: grey;
+    border-radius: 50%;
+    margin: 5px;
+    cursor: pointer;
+    position: static;
+}
+.indicators .indicator.active { 
+    background: white; 
+    transition: 0.3s ease;
+}
+
+.carousel-item .project{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: start;
+    gap: 35px;
+}
+.carousel-item .project .title h4{
     font-size: 24px;
     font-family: "League Spartan";
     font-weight: 400;
     letter-spacing: 8px;
-
-    margin-top: -25px;
     padding: 0 20px;
 }
 
-.projects .website{
+.project .website {
     width: 537px;
     height: 307px;
     border-radius: 10px;
+
+    /* background: rgb(53, 52, 52); */
+
     overflow: hidden;
     position: relative;
 
     display: flex;
     align-items: center;
     justify-content: center;
-
-}.projects .website img{
+}
+.project .website img{
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 10px;
     transition: 0.3s ease;
     position: absolute;
-}.projects .website:hover img{
+}.project .website:hover img{
     transform: scale(105%);
     filter: brightness(50%);
 }
 
-.website .details{
+.project .website .details{
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    position: absolute;
+
     gap: 22px;
 
     font-family: "Roboto";
@@ -341,17 +422,23 @@ nav .links{
 
     opacity: 0;
     transition: 0.4s ease;
-}.website .details h3{
+
+    color: white;
+}
+.project .website .details h3{
     font-size: 24px;
     font-family: "Roboto";
     font-weight: bold;
     letter-spacing: 9px;   
-}.website .details p{
+}
+.project .website .details p{
     font-size: 20px;
     font-weight: 300;
     font-family: "Roboto";
     letter-spacing: 4px;  
-}.website .details button{
+}
+
+.project .website .details button{
     width: 115px;
     height: 30px;
     cursor: pointer;
@@ -366,7 +453,21 @@ nav .links{
     font-weight: bold;
     font-family: "League Spartan";
     letter-spacing: 4px;
-}.website .details button a{
+}
+
+.project .website .details button:hover{
+    transform: scale(105%);
+}
+
+.project .website h4{
+    background-color: #72B5C5;
+    position: absolute;
+    z-index: 1;
+    bottom: -10px;
+    left: 0;
+}
+
+.button a{
     text-decoration: none;
     width: 100%;
     height: 100%;
@@ -376,31 +477,30 @@ nav .links{
     align-items: center;
 }
 
-.website .details #btn1{
-    background-color: #F3C304;
-}.website .details #btn2{
-    background-color: #72B5C5;
-    color: white;
-}.website .details #btn1 a{
+.button.philspot{
     color: #1A1A1D;
-}.website .details #btn2 a{
+    background-color: #F3C304;
+}.button.studysphere{
     color: white;
-}
-.website .details button:hover{
-    transform: scale(105%);
+    background-color: #72B5C5;
+}.button.techxpertz{
+    color: white;
+    background-color: #7B5CAD;
 }
 
-.website h4{
-    background-color: #72B5C5;
-    position: absolute;
-    z-index: 1;
-    bottom: -10px;
-    left: 0;
+.button.philspot a{
+    color: #1A1A1D;
+}.button.studysphere a{
+    color: white;
+}.button.techxpertz a{
+    color: white;
 }
 
 .philspot:hover .details{
     opacity: 1;
 }.studysphere:hover .details{
+    opacity: 1;
+}.techxpertz:hover .details{
     opacity: 1;
 }
 
