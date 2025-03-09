@@ -4,39 +4,76 @@ function activate(){
     document.querySelector(".broken").classList.remove("active");
 }
 
-const carouselInner = document.querySelector('.carousel-inner');
-const items = document.querySelectorAll('.carousel-item');
-const prevBtn = document.querySelector('.prev');
-const nextBtn = document.querySelector('.next');
-const indicatorsContainer = document.querySelector('.indicators');
-let currentIndex = 0;
+const track = document.querySelector(".carousel-track");
+const prevBtn = document.querySelector(".prev");
+const nextBtn = document.querySelector(".next");
+const dotsContainer = document.querySelector(".carousel-dots");
 
-items.forEach((_, index) => {
-    const indicator = document.createElement('div');
-    indicator.classList.add('indicator');
-    if (index === 0) indicator.classList.add('active');
-    indicator.addEventListener('click', () => goToSlide(index));
-    indicatorsContainer.appendChild(indicator);
-});
+let index = 0;
+let items = document.querySelectorAll(".carousel-item").length;
+let itemsPerView = window.innerWidth < 768 ? 1 : 2;
+let totalSlides = Math.ceil(items / itemsPerView);
 
-const updateIndicators = () => {
-    document.querySelectorAll('.indicator').forEach((ind, idx) => {
-        ind.classList.toggle('active', idx === currentIndex);
+// Function to create dots dynamically
+function createDots() {
+    dotsContainer.innerHTML = ""; // Clear existing dots
+    totalSlides = Math.ceil(items / itemsPerView); // Recalculate total slides
+
+    for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement("div");
+        dot.classList.add("dot");
+        if (i === 0) dot.classList.add("active");
+        dot.addEventListener("click", () => goToSlide(i));
+        dotsContainer.appendChild(dot);
+    }
+}
+
+// Function to update carousel position and active dot
+function updateCarousel() {
+    let itemWidth = document.querySelector(".carousel-item").offsetWidth + 
+                    parseInt(getComputedStyle(track).gap);
+    
+    track.style.transform = `translateX(${-index * itemWidth * itemsPerView}px)`;
+
+    document.querySelectorAll(".dot").forEach((dot, i) => {
+        dot.classList.toggle("active", i === index);
     });
-};
+}
 
-const goToSlide = (index) => {
-    currentIndex = index;
-    carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
-    updateIndicators();
-};
+// Function to navigate to a specific slide
+function goToSlide(slideIndex) {
+    index = slideIndex;
+    updateCarousel();
+}
 
-prevBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex === 0) ? items.length - 1 : currentIndex - 1;
-    goToSlide(currentIndex);
+// Next button functionality with looping effect
+nextBtn.addEventListener("click", () => {
+    if (index < totalSlides - 1) {
+        index++;
+    } else {
+        index = 0; // Loop back to the first slide
+    }
+    updateCarousel();
 });
 
-nextBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex === items.length - 1) ? 0 : currentIndex + 1;
-    goToSlide(currentIndex);
+// Previous button functionality with looping effect
+prevBtn.addEventListener("click", () => {
+    if (index > 0) {
+        index--;
+    } else {
+        index = totalSlides - 1; // Loop back to the last slide
+    }
+    updateCarousel();
 });
+
+// Handle window resizing
+window.addEventListener("resize", () => {
+    itemsPerView = window.innerWidth < 845 ? 1 : 2;
+    index = 0; // Reset index to prevent glitches
+    createDots(); // Recreate dots based on new viewport size
+    updateCarousel();
+});
+
+// Initial setup
+createDots();
+updateCarousel();
