@@ -4,6 +4,9 @@ function activate(){
     document.querySelector(".broken").classList.remove("active");
 }
 
+let slideInterval;
+const intervalTime = 10000; // 10 seconds
+
 const track = document.querySelector(".carousel-track");
 const prevBtn = document.querySelector(".prev");
 const nextBtn = document.querySelector(".next");
@@ -23,7 +26,10 @@ function createDots() {
         const dot = document.createElement("div");
         dot.classList.add("dot");
         if (i === 0) dot.classList.add("active");
-        dot.addEventListener("click", () => goToSlide(i));
+        dot.addEventListener("click", () => {
+            goToSlide(i);
+            startAutoSlide(); // Reset timer
+        });
         dotsContainer.appendChild(dot);
     }
 }
@@ -54,6 +60,7 @@ nextBtn.addEventListener("click", () => {
         index = 0; // Loop back to the first slide
     }
     updateCarousel();
+    startAutoSlide(); // Reset timer
 });
 
 // Previous button functionality with looping effect
@@ -64,6 +71,7 @@ prevBtn.addEventListener("click", () => {
         index = totalSlides - 1; // Loop back to the last slide
     }
     updateCarousel();
+    startAutoSlide(); // Reset timer
 });
 
 // Handle window resizing
@@ -74,6 +82,14 @@ window.addEventListener("resize", () => {
     updateCarousel();
 });
 
+function startAutoSlide() {
+    clearInterval(slideInterval); // Clear existing interval
+    slideInterval = setInterval(() => {
+        nextBtn.click(); // Trigger the next button click
+    }, intervalTime);
+}
+
 // Initial setup
 createDots();
 updateCarousel();
+startAutoSlide();
