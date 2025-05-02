@@ -36,10 +36,17 @@ body {
 
 .image{
     position: absolute;
+    width: 690px;
+    right: 125px;
+    bottom: 20px;
+    z-index: -1;
+
+    /* OLD PICTURE */
+    /* position: absolute;
     width: 743px;
     right: 100px;
     bottom: 0px;
-    z-index: -1;
+    z-index: -1; */
 }
 
 nav {
@@ -147,7 +154,7 @@ nav .links{
 .container2{
     color: white;
     max-width: 1440px;
-    height: 800px;    
+    /* height: 800px;     */
     margin: auto;
 
     display: flex;
@@ -464,6 +471,8 @@ nav .links{
     opacity: 1;
 }.techxpertz:hover .details{
     opacity: 1;
+}.hatcherysystem:hover .details{
+    opacity: 1;
 }
 
 .button a{
@@ -485,6 +494,9 @@ nav .links{
 }.button.techxpertz{
     color: white;
     background-color: #7B5CAD;
+}.button.hatcherysystem{
+    color: white;
+    background-color: #ec8b18;
 }
 
 .button.philspot a{
@@ -492,6 +504,8 @@ nav .links{
 }.button.studysphere a{
     color: white;
 }.button.techxpertz a{
+    color: white;
+}.button.hatcherysystem a{
     color: white;
 }
 /* CONTAINER 4 */
