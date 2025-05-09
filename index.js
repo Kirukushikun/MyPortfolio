@@ -89,6 +89,16 @@ function startAutoSlide() {
     }, intervalTime);
 }
 
+function pauseAutoSlide() {
+    clearInterval(slideInterval);
+}
+
+// Pause on hover for all carousel items
+document.querySelectorAll(".carousel-item").forEach(item => {
+    item.addEventListener("mouseenter", pauseAutoSlide);
+    item.addEventListener("mouseleave", startAutoSlide);
+});
+
 // Initial setup
 createDots();
 updateCarousel();
