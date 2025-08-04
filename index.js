@@ -103,3 +103,29 @@ document.querySelectorAll(".carousel-item").forEach(item => {
 createDots();
 updateCarousel();
 startAutoSlide();
+
+window.addEventListener("load", () => {
+    const loaderC = document.getElementById("loader-container");
+    const loader = document.querySelector('.loader');
+
+    loader.classList.add('done');
+
+    setTimeout(() => {
+        document.querySelector("body").style.overflowY = 'scroll';
+        loaderC.classList.add("hide"); 
+    }, 1000);
+});
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        console.log(entry);
+        if(entry.isIntersecting){
+            entry.target.classList.add('show');
+        } else {
+            entry.target.classList.remove('show');
+        }
+    })
+});
+
+const hiddenElements = document.querySelectorAll(".hidden");
+hiddenElements.forEach((el) => observer.observe(el));
